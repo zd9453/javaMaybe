@@ -12,6 +12,14 @@ public class MethodMain {
 
         int[] ints = {12, 1, 3, 4, 56};
 
+        String content = "this is my test message";
+
+        String reg = "\\w{11}";
+
+        boolean matches = content.matches(reg);
+
+        System.out.println(matches);
+
 
     }
 

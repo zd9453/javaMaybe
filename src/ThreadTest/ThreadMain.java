@@ -28,13 +28,39 @@ public class ThreadMain {
         new Thread(new Person("C")).start();*/
 
 
-        Window window1 = new Window("成都", System12306.getInstance());
+       /* Window window1 = new Window("成都", System12306.getInstance());
         Window window2 = new Window("上海", System12306.getInstance());
         Window window3 = new Window("北京", System12306.getInstance());
 
         window1.start();
         window2.start();
-        window3.start();
+        window3.start();*/
+
+//        char a = '.';
+//        System.out.println("-:" + ((int) a));
+
+
+        /*int time = -10000;
+
+        int ceil = (int) Math.ceil(time / 1000f);
+        System.out.println(ceil);
+
+        System.out.println(String.format(Locale.CHINA, "00:%02d", ceil));*/
+
+        //位运算
+        int sI = 5; //二进制 101
+        //左位移N位 *2的N次方
+        System.out.println(sI << 3);    //101 << 3 --> 101000
+        //右位移N位  /2的N次方取整
+        System.out.println(sI >> 1);    //101 >>1 --> 10
+        //与运算 同为1则为1 不同为0
+        System.out.println(sI & 1);     // 101 & 001 --> 001
+        //或运算 相同位上 有1为1 同为0为0
+        System.out.println(sI | 2);     // 101 | 010 --> 111
+        //非运算 按位取反
+        System.out.println(~sI);        // ~0101 --> 1010
+        //异或 相同为0 不同为1
+        System.out.println(sI ^ 3);     // 101 ^ 011 --> 110
 
 
     }
@@ -87,6 +113,11 @@ class Window extends Thread {
     public void run() {
         while (system12306.have()) {
             system12306.deleteTip(getName());
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
@@ -106,7 +137,7 @@ class System12306 {
 
     {
         //初始化票
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 50; i++) {
             tips.put(i, new Tip(i));
         }
     }
