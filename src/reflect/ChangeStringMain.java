@@ -79,6 +79,17 @@ public class ChangeStringMain {
         }
 */
 
+        try {
+            Class<?> aClass = Class.forName("reflect.Anim");
+            Field[] fields = aClass.getDeclaredFields();
+            for (Field field : fields) {
+                System.out.println(field.getName());
+            }
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
         Object bean = getBean("reflect.Anim");
 
         System.out.println(bean);

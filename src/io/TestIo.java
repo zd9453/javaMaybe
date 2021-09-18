@@ -21,7 +21,7 @@ public class TestIo {
 
         try {
 
-            File textpakage = new File("src/io/text");
+           /* File textpakage = new File("src/io/text");
             if (textpakage.exists()) {
                 textpakage.delete();
             }
@@ -34,20 +34,23 @@ public class TestIo {
             //获取相对路径
             System.out.println(textpakage.getPath());
 
-            FileWriter fileWriter = new FileWriter(textpakage.getPath() + "/test2.text", false);
+            FileWriter fileWriter = new FileWriter(textpakage.getPath() + "/dimens.xml", false);
 
-            fileWriter.write("this is my info~ " + System.currentTimeMillis());
+            fileWriter.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+            fileWriter.write("\n");
+            fileWriter.write("<resources>");
             fileWriter.write("\n");
 
-            Date time = Calendar.getInstance().getTime();
-
-            fileWriter.write(time.toString());
-            fileWriter.write("\n");
+            for (int i = 0; i < 1701; i++) {
+                fileWriter.write("<dimen name=\"px_" + i + "\">" + Math.round(i * 0.75) + "px</dimen>");
+                fileWriter.write("\n");
+            }
+            fileWriter.write("</resources>");
 
             fileWriter.flush();
 
             fileWriter.close();
-
+*/
 //            FileReader reader = new FileReader(textpakage.getPath() + "/test2.text");
 //            char[] chs = new char[reader.read()];
 //            int num = 0;
@@ -56,17 +59,17 @@ public class TestIo {
 //                System.out.print(new String(chs, 0, num));
 //            }
 
-            FileInputStream inputStream = new FileInputStream(textpakage.getPath() + "/test2.text");
-            byte[] chars = new byte[inputStream.available()];
-            int read = inputStream.read(chars);
-            System.out.println(new String(chars));
+//            FileInputStream inputStream = new FileInputStream(textpakage.getPath() + "/test2.text");
+//            byte[] chars = new byte[inputStream.available()];
+//            int read = inputStream.read(chars);
+//            System.out.println(new String(chars));
 
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        checkQQ("194946091");
+//        checkQQ("194946091");
     }
 
     public static void checkQQ(String qq) {

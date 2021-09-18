@@ -2,6 +2,7 @@ package ThreadTest;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Stack;
 
 /**
  * ProjectName: javaMaybe
@@ -46,7 +47,7 @@ public class ThreadMain {
         System.out.println(ceil);
 
         System.out.println(String.format(Locale.CHINA, "00:%02d", ceil));*/
-
+/*
         //位运算
         int sI = 5; //二进制 101
         //左位移N位 *2的N次方
@@ -61,6 +62,42 @@ public class ThreadMain {
         System.out.println(~sI);        // ~0101 --> 1010
         //异或 相同为0 不同为1
         System.out.println(sI ^ 3);     // 101 ^ 011 --> 110
+*/
+
+        //栈 先进后出
+        Stack<Integer> stack = new Stack<>();
+
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+        stack.push(5);
+        stack.push(6);
+
+        //查看栈点元素
+        Integer peek = stack.peek();
+        System.out.println("peek: " + peek);
+
+        //查找元素离栈顶的位置 栈顶元素位置为1
+        int search = stack.search(2);
+        System.out.println("search: " + search);
+
+        //弹出栈内所有元素
+        while (!stack.empty()) {
+            //弹出栈顶元素
+            Integer pop = stack.pop();
+            System.out.println(">>> " + pop);
+        }
+
+        String content = "哈夫曼树，平衡二叉树显示";
+        //if else while() true false return break continue System.out.println() import process finish exit code
+
+        // class extends interface intent Thread banner Bundle progressBar dialog
+
+        //do while project model project process finished with exit code
+        //adb install adb uninstall adb density adb shell display
+        // implement 带权路径最小的树就是哈夫曼树  huffman
+        // 哈夫曼树的生成 import implement import Android.utils.java.String.StringUtils
 
 
     }
